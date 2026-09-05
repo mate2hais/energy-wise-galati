@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DespreRouteImport } from './routes/despre'
+import { Route as PreturiRouteImport } from './routes/preturi'
+import { Route as ProcesRouteImport } from './routes/proces'
+import { Route as ServiciiRouteImport } from './routes/servicii'
+import { Route as ZonaDeAcoperireRouteImport } from './routes/zona-de-acoperire'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DespreRoute = DespreRouteImport.update({
+  id: '/despre',
+  path: '/despre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreturiRoute = PreturiRouteImport.update({
+  id: '/preturi',
+  path: '/preturi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcesRoute = ProcesRouteImport.update({
+  id: '/proces',
+  path: '/proces',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiciiRoute = ServiciiRouteImport.update({
+  id: '/servicii',
+  path: '/servicii',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZonaDeAcoperireRoute = ZonaDeAcoperireRouteImport.update({
+  id: '/zona-de-acoperire',
+  path: '/zona-de-acoperire',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/despre': typeof DespreRoute
+  '/preturi': typeof PreturiRoute
+  '/proces': typeof ProcesRoute
+  '/servicii': typeof ServiciiRoute
+  '/zona-de-acoperire': typeof ZonaDeAcoperireRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/despre': typeof DespreRoute
+  '/preturi': typeof PreturiRoute
+  '/proces': typeof ProcesRoute
+  '/servicii': typeof ServiciiRoute
+  '/zona-de-acoperire': typeof ZonaDeAcoperireRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/despre': typeof DespreRoute
+  '/preturi': typeof PreturiRoute
+  '/proces': typeof ProcesRoute
+  '/servicii': typeof ServiciiRoute
+  '/zona-de-acoperire': typeof ZonaDeAcoperireRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/despre'
+    | '/preturi'
+    | '/proces'
+    | '/servicii'
+    | '/zona-de-acoperire'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/despre'
+    | '/preturi'
+    | '/proces'
+    | '/servicii'
+    | '/zona-de-acoperire'
+  id:
+    | '__root__'
+    | '/'
+    | '/despre'
+    | '/preturi'
+    | '/proces'
+    | '/servicii'
+    | '/zona-de-acoperire'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DespreRoute: typeof DespreRoute
+  PreturiRoute: typeof PreturiRoute
+  ProcesRoute: typeof ProcesRoute
+  ServiciiRoute: typeof ServiciiRoute
+  ZonaDeAcoperireRoute: typeof ZonaDeAcoperireRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/despre': {
+      id: '/despre'
+      path: '/despre'
+      fullPath: '/despre'
+      preLoaderRoute: typeof DespreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preturi': {
+      id: '/preturi'
+      path: '/preturi'
+      fullPath: '/preturi'
+      preLoaderRoute: typeof PreturiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proces': {
+      id: '/proces'
+      path: '/proces'
+      fullPath: '/proces'
+      preLoaderRoute: typeof ProcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicii': {
+      id: '/servicii'
+      path: '/servicii'
+      fullPath: '/servicii'
+      preLoaderRoute: typeof ServiciiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zona-de-acoperire': {
+      id: '/zona-de-acoperire'
+      path: '/zona-de-acoperire'
+      fullPath: '/zona-de-acoperire'
+      preLoaderRoute: typeof ZonaDeAcoperireRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DespreRoute: DespreRoute,
+  PreturiRoute: PreturiRoute,
+  ProcesRoute: ProcesRoute,
+  ServiciiRoute: ServiciiRoute,
+  ZonaDeAcoperireRoute: ZonaDeAcoperireRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
