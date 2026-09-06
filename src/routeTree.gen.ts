@@ -14,7 +14,10 @@ import { Route as DespreRouteImport } from './routes/despre'
 import { Route as PreturiRouteImport } from './routes/preturi'
 import { Route as ProcesRouteImport } from './routes/proces'
 import { Route as ServiciiRouteImport } from './routes/servicii'
+import { Route as TestimonialeRouteImport } from './routes/testimoniale'
 import { Route as ZonaDeAcoperireRouteImport } from './routes/zona-de-acoperire'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -41,9 +44,24 @@ const ServiciiRoute = ServiciiRouteImport.update({
   path: '/servicii',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TestimonialeRoute = TestimonialeRouteImport.update({
+  id: '/testimoniale',
+  path: '/testimoniale',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ZonaDeAcoperireRoute = ZonaDeAcoperireRouteImport.update({
   id: '/zona-de-acoperire',
   path: '/zona-de-acoperire',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -53,7 +71,10 @@ export interface FileRoutesByFullPath {
   '/preturi': typeof PreturiRoute
   '/proces': typeof ProcesRoute
   '/servicii': typeof ServiciiRoute
+  '/testimoniale': typeof TestimonialeRoute
   '/zona-de-acoperire': typeof ZonaDeAcoperireRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +82,10 @@ export interface FileRoutesByTo {
   '/preturi': typeof PreturiRoute
   '/proces': typeof ProcesRoute
   '/servicii': typeof ServiciiRoute
+  '/testimoniale': typeof TestimonialeRoute
   '/zona-de-acoperire': typeof ZonaDeAcoperireRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +94,10 @@ export interface FileRoutesById {
   '/preturi': typeof PreturiRoute
   '/proces': typeof ProcesRoute
   '/servicii': typeof ServiciiRoute
+  '/testimoniale': typeof TestimonialeRoute
   '/zona-de-acoperire': typeof ZonaDeAcoperireRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -80,7 +107,10 @@ export interface FileRouteTypes {
     | '/preturi'
     | '/proces'
     | '/servicii'
+    | '/testimoniale'
     | '/zona-de-acoperire'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -88,7 +118,10 @@ export interface FileRouteTypes {
     | '/preturi'
     | '/proces'
     | '/servicii'
+    | '/testimoniale'
     | '/zona-de-acoperire'
+    | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
@@ -96,7 +129,10 @@ export interface FileRouteTypes {
     | '/preturi'
     | '/proces'
     | '/servicii'
+    | '/testimoniale'
     | '/zona-de-acoperire'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,7 +141,10 @@ export interface RootRouteChildren {
   PreturiRoute: typeof PreturiRoute
   ProcesRoute: typeof ProcesRoute
   ServiciiRoute: typeof ServiciiRoute
+  TestimonialeRoute: typeof TestimonialeRoute
   ZonaDeAcoperireRoute: typeof ZonaDeAcoperireRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -145,11 +184,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServiciiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/testimoniale': {
+      id: '/testimoniale'
+      path: '/testimoniale'
+      fullPath: '/testimoniale'
+      preLoaderRoute: typeof TestimonialeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/zona-de-acoperire': {
       id: '/zona-de-acoperire'
       path: '/zona-de-acoperire'
       fullPath: '/zona-de-acoperire'
       preLoaderRoute: typeof ZonaDeAcoperireRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -161,7 +221,10 @@ const rootRouteChildren: RootRouteChildren = {
   PreturiRoute: PreturiRoute,
   ProcesRoute: ProcesRoute,
   ServiciiRoute: ServiciiRoute,
+  TestimonialeRoute: TestimonialeRoute,
   ZonaDeAcoperireRoute: ZonaDeAcoperireRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
