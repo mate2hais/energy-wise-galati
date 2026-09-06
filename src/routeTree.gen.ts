@@ -10,20 +10,42 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ConfidentialitateRouteImport } from './routes/confidentialitate'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DespreRouteImport } from './routes/despre'
+import { Route as IntrebariFrecventeRouteImport } from './routes/intrebari-frecvente'
 import { Route as PreturiRouteImport } from './routes/preturi'
 import { Route as ProcesRouteImport } from './routes/proces'
 import { Route as ServiciiRouteImport } from './routes/servicii'
+import { Route as TermeniRouteImport } from './routes/termeni'
+import { Route as TestimonialeRouteImport } from './routes/testimoniale'
 import { Route as ZonaDeAcoperireRouteImport } from './routes/zona-de-acoperire'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConfidentialitateRoute = ConfidentialitateRouteImport.update({
+  id: '/confidentialitate',
+  path: '/confidentialitate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DespreRoute = DespreRouteImport.update({
   id: '/despre',
   path: '/despre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntrebariFrecventeRoute = IntrebariFrecventeRouteImport.update({
+  id: '/intrebari-frecvente',
+  path: '/intrebari-frecvente',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PreturiRoute = PreturiRouteImport.update({
@@ -41,71 +63,140 @@ const ServiciiRoute = ServiciiRouteImport.update({
   path: '/servicii',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermeniRoute = TermeniRouteImport.update({
+  id: '/termeni',
+  path: '/termeni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestimonialeRoute = TestimonialeRouteImport.update({
+  id: '/testimoniale',
+  path: '/testimoniale',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ZonaDeAcoperireRoute = ZonaDeAcoperireRouteImport.update({
   id: '/zona-de-acoperire',
   path: '/zona-de-acoperire',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/confidentialitate': typeof ConfidentialitateRoute
+  '/contact': typeof ContactRoute
   '/despre': typeof DespreRoute
+  '/intrebari-frecvente': typeof IntrebariFrecventeRoute
   '/preturi': typeof PreturiRoute
   '/proces': typeof ProcesRoute
   '/servicii': typeof ServiciiRoute
+  '/termeni': typeof TermeniRoute
+  '/testimoniale': typeof TestimonialeRoute
   '/zona-de-acoperire': typeof ZonaDeAcoperireRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/confidentialitate': typeof ConfidentialitateRoute
+  '/contact': typeof ContactRoute
   '/despre': typeof DespreRoute
+  '/intrebari-frecvente': typeof IntrebariFrecventeRoute
   '/preturi': typeof PreturiRoute
   '/proces': typeof ProcesRoute
   '/servicii': typeof ServiciiRoute
+  '/termeni': typeof TermeniRoute
+  '/testimoniale': typeof TestimonialeRoute
   '/zona-de-acoperire': typeof ZonaDeAcoperireRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/confidentialitate': typeof ConfidentialitateRoute
+  '/contact': typeof ContactRoute
   '/despre': typeof DespreRoute
+  '/intrebari-frecvente': typeof IntrebariFrecventeRoute
   '/preturi': typeof PreturiRoute
   '/proces': typeof ProcesRoute
   '/servicii': typeof ServiciiRoute
+  '/termeni': typeof TermeniRoute
+  '/testimoniale': typeof TestimonialeRoute
   '/zona-de-acoperire': typeof ZonaDeAcoperireRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/confidentialitate'
+    | '/contact'
     | '/despre'
+    | '/intrebari-frecvente'
     | '/preturi'
     | '/proces'
     | '/servicii'
+    | '/termeni'
+    | '/testimoniale'
     | '/zona-de-acoperire'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/confidentialitate'
+    | '/contact'
     | '/despre'
+    | '/intrebari-frecvente'
     | '/preturi'
     | '/proces'
     | '/servicii'
+    | '/termeni'
+    | '/testimoniale'
     | '/zona-de-acoperire'
+    | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
+    | '/confidentialitate'
+    | '/contact'
     | '/despre'
+    | '/intrebari-frecvente'
     | '/preturi'
     | '/proces'
     | '/servicii'
+    | '/termeni'
+    | '/testimoniale'
     | '/zona-de-acoperire'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConfidentialitateRoute: typeof ConfidentialitateRoute
+  ContactRoute: typeof ContactRoute
   DespreRoute: typeof DespreRoute
+  IntrebariFrecventeRoute: typeof IntrebariFrecventeRoute
   PreturiRoute: typeof PreturiRoute
   ProcesRoute: typeof ProcesRoute
   ServiciiRoute: typeof ServiciiRoute
+  TermeniRoute: typeof TermeniRoute
+  TestimonialeRoute: typeof TestimonialeRoute
   ZonaDeAcoperireRoute: typeof ZonaDeAcoperireRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -117,11 +208,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/confidentialitate': {
+      id: '/confidentialitate'
+      path: '/confidentialitate'
+      fullPath: '/confidentialitate'
+      preLoaderRoute: typeof ConfidentialitateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/despre': {
       id: '/despre'
       path: '/despre'
       fullPath: '/despre'
       preLoaderRoute: typeof DespreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/intrebari-frecvente': {
+      id: '/intrebari-frecvente'
+      path: '/intrebari-frecvente'
+      fullPath: '/intrebari-frecvente'
+      preLoaderRoute: typeof IntrebariFrecventeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/preturi': {
@@ -145,6 +257,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServiciiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/termeni': {
+      id: '/termeni'
+      path: '/termeni'
+      fullPath: '/termeni'
+      preLoaderRoute: typeof TermeniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testimoniale': {
+      id: '/testimoniale'
+      path: '/testimoniale'
+      fullPath: '/testimoniale'
+      preLoaderRoute: typeof TestimonialeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/zona-de-acoperire': {
       id: '/zona-de-acoperire'
       path: '/zona-de-acoperire'
@@ -152,16 +278,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZonaDeAcoperireRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConfidentialitateRoute: ConfidentialitateRoute,
+  ContactRoute: ContactRoute,
   DespreRoute: DespreRoute,
+  IntrebariFrecventeRoute: IntrebariFrecventeRoute,
   PreturiRoute: PreturiRoute,
   ProcesRoute: ProcesRoute,
   ServiciiRoute: ServiciiRoute,
+  TermeniRoute: TermeniRoute,
+  TestimonialeRoute: TestimonialeRoute,
   ZonaDeAcoperireRoute: ZonaDeAcoperireRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
