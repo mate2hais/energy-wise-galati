@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { CONTACT } from "@/lib/site-data";
-import portret from "@/assets/portret-auditor.jpg";
+import portretAsset from "@/assets/portret-auditor.jpg.asset.json";
+const portret = portretAsset.url;
 
 const TITLE = "Despre Iulian Gabriel Panainte — Auditor Energetic Gradul I, Galați";
 const DESC =
