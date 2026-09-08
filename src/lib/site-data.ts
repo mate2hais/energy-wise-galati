@@ -265,41 +265,19 @@ export const CASE_STUDIES = [
 ];
 
 export const PRICING = [
+  { service: "Certificat Energetic Garsonieră", price: "150 lei", delivery: "1–3 zile" },
+  { service: "Certificat Energetic Apartament 1 cameră", price: "150 lei", delivery: "1–3 zile" },
+  { service: "Certificat Energetic Apartament 2 camere", price: "250 lei", delivery: "1–3 zile" },
+  { service: "Certificat Energetic Apartament 3–4 camere", price: "350 lei", delivery: "1–3 zile" },
+  { service: "Certificat Energetic Casă < 150 mp", price: "350 lei", delivery: "1–3 zile" },
+  { service: "Certificat Energetic Casă > 150 mp", price: "400 lei", delivery: "1–3 zile" },
   {
-    title: "Apartament / locuință individuală",
-    price: "de la 250 lei",
-    desc: "Certificat de performanță energetică, cu vizită la fața locului și măsurători.",
-    items: ["Vizită și măsurători incluse", "Emitere în 1–3 zile lucrătoare", "Valabilitate 10 ani"],
+    service: "Clădiri de birouri, școli, spitale, spații peste 500 mp",
+    price: "de la 1,5 euro/mp",
+    delivery: "2–7 zile",
   },
-  {
-    title: "Bloc de locuințe",
-    price: "de la 2.900 lei",
-    desc: "Audit energetic + certificat pentru întregul imobil, cu documentație pentru finanțare.",
-    items: [
-      "Evaluarea anvelopei și instalațiilor comune",
-      "Soluții de reabilitare cu amortizare",
-      "Dosar pentru programele de renovare",
-    ],
-    featured: true,
-  },
-  {
-    title: "Spațiu comercial",
-    price: "de la 600 lei",
-    desc: "Certificat sau audit pentru birouri, magazine, HoReCa și spații de servicii.",
-    items: ["Adaptat suprafeței și destinației", "Livrare rapidă", "Recomandări de eficientizare"],
-  },
-  {
-    title: "Audit industrial",
-    price: "ofertă personalizată",
-    desc: "Hale, fabrici și spații de producție — preț stabilit după complexitatea proceselor.",
-    items: ["Bilanț energetic complet", "Măsurători pe utilități", "Plan de măsuri prioritizate"],
-  },
-  {
-    title: "Consultanță NZEB / SER",
-    price: "ofertă personalizată",
-    desc: "Studii pentru clădiri noi, renovări majore și integrarea surselor regenerabile.",
-    items: ["Implicare din faza de proiect", "Dimensionare corectă a sistemelor", "Documentație completă"],
-  },
+  { service: "Audit Energetic Clădiri", price: "De la 4000 lei", delivery: "7–9 zile" },
+  { service: "Audit Industrial", price: "De la 4000 lei", delivery: "7–30 zile", note: "Începând de la 7 zile pentru realizarea auditului; pentru urgențe se poate percepe o taxă suplimentară." },
 ];
 
 export const PROCESS = [
